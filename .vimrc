@@ -17,7 +17,6 @@ Bundle 'Valloric/YouCompleteMe'
 
 " vundle plugins
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
@@ -42,6 +41,14 @@ set number
 
 " show a visual line under the cursor's current line
 set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkgrey
+
+augroup CursorLine
+	au!
+	au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+	au WinLeave * setlocal nocursorline
+augroup END
+
 
 " show the matching part of the pair for [] {} and ()
 set showmatch
@@ -82,7 +89,6 @@ EOF
 " Flake 8
 autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_file=1
-
 set backspace=indent,eol,start
 
 " Nerd tree stuff
@@ -92,13 +98,3 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " YCM logging
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
