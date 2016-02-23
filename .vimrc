@@ -75,6 +75,11 @@ set shiftwidth=4
 set expandtab
 set autoindent
 
+let g:ctrlp_custom_ignore = '\v[\/](WEB-INF|env|build)$'
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/
 
