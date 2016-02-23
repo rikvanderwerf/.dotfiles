@@ -3,6 +3,7 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
@@ -67,7 +68,7 @@ au BufNewFile,BufRead *.py
     \ highlight ColorColumn ctermbg=red |
 
 
-set fileformat=unixv
+set fileformat=unix
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
