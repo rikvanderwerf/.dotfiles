@@ -79,6 +79,7 @@ let g:ctrlp_custom_ignore = '\v[\/](WEB-INF|env|build)$'
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_working_path_mode = 0
 
 highlight RedundantSpaces term=standout ctermbg=red guibg=red
 match RedundantSpaces /\s\+$\| \+\ze\t/
