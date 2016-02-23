@@ -1,11 +1,18 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/robinsiep/.oh-my-zsh
+if [ -r ./zshrc ]; then
+	. ./zshrc
+else
+	# Path to your oh-my-zsh installation.
+	export ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+	plugins=(git, chucknorris, common-aliases, jsontools, osx, pep8, pip,
+                 python, sudo, tmux, wd)
+
+	# Set name of the theme to load.
+	# Look in ~/.oh-my-zsh/themes/
+	# Optionally, if you set this to "random", it'll load a random theme each
+	# time that oh-my-zsh is loaded.
+	ZSH_THEME="agnoster"
+fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -44,13 +51,6 @@ ZSH_THEME="agnoster"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git, chucknorris, common-aliases, jira, jsontools, osx, pep8, pip,
-         python, sudo, tmux, wd)
 
 # User configuration
 
