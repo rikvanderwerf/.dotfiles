@@ -1,5 +1,5 @@
-if [ -r ./zshrc ]; then
-	. ./zshrc
+if [ -r ~/.zshrc.local ]; then
+	. ~/.zshrc.local
 else
 	# Path to your oh-my-zsh installation.
 	export ZSH=~/.oh-my-zsh
